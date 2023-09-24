@@ -1,20 +1,25 @@
+"use client";
 import { type AppType } from "next/dist/shared/lib/utils";
-import { ThirdwebProvider, ThirdwebSDKProvider } from "@thirdweb-dev/react";
-import { ethers } from "ethers";
+import { ConnectWallet, ThirdwebProvider, coinbaseWallet, metamaskWallet, phantomWallet, rainbowWallet, trustWallet, walletConnect, zerionWallet } from "@thirdweb-dev/react";
 import "~/styles/globals.css";
-
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (<>
-    <ThirdwebProvider activeChain="mumbai" clientId="af574d551a74949aacbf76fbee4f40f4">
-    <ThirdwebSDKProvider
-      activeChain={"mumbai"}
-      // Example: Use ethers to get the signer from the window.ethereum object
-      signer={new ethers.providers.Web3Provider(window.ethereum).getSigner()}
+    <ThirdwebProvider
+      activeChain="polygon"
       clientId="af574d551a74949aacbf76fbee4f40f4"
+      supportedWallets={[
+        metamaskWallet(),
+        coinbaseWallet(),
+        walletConnect(),
+        trustWallet(),
+        zerionWallet(),
+        rainbowWallet(),
+        phantomWallet(),
+      ]}
     >
       <Component {...pageProps} />;
-      </ThirdwebSDKProvider>
+
     </ThirdwebProvider>
   </>)
 };
