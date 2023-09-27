@@ -1,9 +1,15 @@
 "use client";
 import { type AppType } from "next/dist/shared/lib/utils";
-import { ConnectWallet, ThirdwebProvider, coinbaseWallet, metamaskWallet, phantomWallet, rainbowWallet, trustWallet, walletConnect, zerionWallet } from "@thirdweb-dev/react";
+import { ThirdwebProvider, coinbaseWallet, metamaskWallet, phantomWallet, rainbowWallet, trustWallet, walletConnect, zerionWallet } from "@thirdweb-dev/react";
 import "~/styles/globals.css";
+import Navbar from "~/components/Navbar";
+import { useEffect } from "react";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+  }, [])
+
   return (<>
     <ThirdwebProvider
       activeChain="polygon"
@@ -18,8 +24,11 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         phantomWallet(),
       ]}
     >
-      <Component {...pageProps} />;
-
+      <div className="flex flex-col bg-gray-800 min-h-[100vh] h-auto w-full overflow-y-hidden overflow-x-hidden">
+        <Navbar />
+        <div className="mt-24"/>
+        <Component {...pageProps} />;
+      </div>
     </ThirdwebProvider>
   </>)
 };
