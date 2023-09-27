@@ -24,7 +24,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         phantomWallet(),
       ]}
     >
-      <div className="flex flex-col bg-gray-800 min-h-[100vh] h-auto w-full overflow-y-hidden overflow-x-hidden">
+      <div className="flex flex-col bg-gray-900 min-h-[100vh] h-auto w-full overflow-y-hidden overflow-x-hidden">
         <Navbar />
         <div className="mt-24"/>
         <Component {...pageProps} />;
