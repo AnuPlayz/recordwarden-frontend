@@ -30,7 +30,7 @@ export default function LiveCaseUpdates() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-gray-200">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-lg">
                                 #0001
                             </th>
@@ -38,10 +38,10 @@ export default function LiveCaseUpdates() {
                                 Added new Lawyer
                             </td>
                             <td className="px-6 py-4">
-                                Ani&nbsp;<span className="text-gray-600">{"("}0x847328472343{")"}</span>, Sudhan&nbsp;<span className="text-gray-600">{"("}0x847328472343{")"}</span>
+                                Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>, Sudhan&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
                             </td>
                             <td className="px-6 py-4">
-                                Ani&nbsp;<span className="text-gray-600">{"("}0x847328472343{")"}</span>
+                                Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
                             </td>
                             <td className="px-6 py-4">
                                 {new Date(1279267555432).toLocaleString()}
@@ -50,7 +50,7 @@ export default function LiveCaseUpdates() {
                                 <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
                             </td>
                         </tr>
-                        <tr className="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                        <tr className="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700 text-gray-200">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-lg">
                                 #0002
                             </th>
@@ -58,10 +58,10 @@ export default function LiveCaseUpdates() {
                                 Robbery
                             </td>
                             <td className="px-6 py-4">
-                                Ani&nbsp;<span className="text-gray-600">{"("}0x847328472343{")"}</span>, Sudhan&nbsp;<span className="text-gray-600">{"("}0x847328472343{")"}</span>
+                                Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>, Sudhan&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
                             </td>
                             <td className="px-6 py-4">
-                                Ani&nbsp;<span className="text-gray-600">{"("}0x847328472343{")"}</span>
+                                Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
                             </td>
                             <td className="px-6 py-4">
                                 {new Date(1279267555432).toLocaleString()}
@@ -70,7 +70,7 @@ export default function LiveCaseUpdates() {
                                 <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
                             </td>
                         </tr>
-                        <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-gray-200">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-lg">
                                 #0004
                             </th>
@@ -78,10 +78,10 @@ export default function LiveCaseUpdates() {
                                 Robbery
                             </td>
                             <td className="px-6 py-4">
-                                Ani&nbsp;<span className="text-gray-600">{"("}0x847328472343{")"}</span>, Sudhan&nbsp;<span className="text-gray-600">{"("}0x847328472343{")"}</span>
+                                Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>, Sudhan&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
                             </td>
                             <td className="px-6 py-4">
-                                Ani&nbsp;<span className="text-gray-600">{"("}0x847328472343{")"}</span>
+                                Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
                             </td>
                             <td className="px-6 py-4">
                                 {new Date(1279267555432).toLocaleString()}

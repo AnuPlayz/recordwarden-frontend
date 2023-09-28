@@ -12,10 +12,10 @@ export default function Cases() {
 
             <div className="flex flex-col p-5">
                 <div className="flex flex-row justify-between">
-                    <div className="text-3xl text-white">Case #001</div>
-                    <div className="text-xl text-white flex flex-row items-center justify-center h-full bg-gray-700 py-1 px-3 rounded-lg">Case Status: &nbsp;<span className="text-green-400 text-2xl">&nbsp;Open</span></div>
+                    <div className="text-3xl text-white select-text">Case #001</div>
+                    <div className="text-xl text-white flex flex-row items-center justify-center h-full bg-gray-700 py-1 px-3 rounded-lg select-text">Case Status: &nbsp;<span className="text-green-400 text-2xl">&nbsp;Open</span></div>
                 </div>
-                <div className="text-md text-gray-400 mt-3">Ani stole 69420$ from indian bank and then he decided to go to sudhan home and share him some money but then he also bringed some russians for the fun but soon as they started to watch some anime for fun, they heard a knock at the door which is the police inquiring about the russian girls in their house and they decided to share it with the police, showing how corrupted our system is . If police start getting sold for russians, what is the future of our country? This case is registered not on Ani or Sudhan but on the Police who got sold so easily and the government officials who hired these corrupted individuals.</div>
+                <div className="text-md text-gray-400 mt-3 select-text">Ani stole 69420$ from indian bank and then he decided to go to sudhan home and share him some money but then he also bringed some russians for the fun but soon as they started to watch some anime for fun, they heard a knock at the door which is the police inquiring about the russian girls in their house and they decided to share it with the police, showing how corrupted our system is . If police start getting sold for russians, what is the future of our country? This case is registered not on Ani or Sudhan but on the Police who got sold so easily and the government officials who hired these corrupted individuals.</div>
             </div>
 
             <div className="flex flex-row w-screen">
