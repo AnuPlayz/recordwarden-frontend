@@ -15,7 +15,7 @@ export default function Documents() {
             </Head>
 
             <div className="px-5 flex flex-col relative w-full">
-                {isOpen && <div className="absolute z-50 w-full h-full">
+                {isOpen && <div className="absolute z-50 w-full h-full" onClick={() => setIsOpen(false)}>
                     <div className="bg-slate-900 rounded-xl h-[50vh] w-1/2 translate-x-[50%] translate-y-[20%] border border-slate-700 flex flex-col">
                         <div className="flex flex-row justify-between p-5 items-center">
                             <div className="text-3xl text-white">Edit Permissions</div>
@@ -27,7 +27,7 @@ export default function Documents() {
                             <div className="ml-3 bg-green-500 h-full px-7 text-white rounded-lg py-2 cursor-pointer hover:bg-green-700">Add</div>
                         </div>
 
-                        <div className="flex flex-col h-auto overflow-hidden w-auto">
+                        <div className="flex flex-col overflow-y-auto w-auto">
                             <div className="flex flex-row w-auto h-14 justify-between mx-5 my-1 items-center">
                                 <div className="flex flex-row items-center">
                                     <Avatar size="md" className="hover:scale-125" rounded img="https://media.discordapp.net/attachments/1106611314891161663/1156610032146841600/990b8f959622f152.jpg" />
@@ -74,7 +74,7 @@ export default function Documents() {
                                 <th scope="col" className="px-6 py-3">
                                     File CID
                                 </th>
-                                <th scope="col" className="px-6 py-3">
+                                <th scope="col" className="px-6 py-3 text-center">
                                     Can be accessed by
                                 </th>
                                 <th scope="col" className="px-6 py-3">
