@@ -5,3 +5,12 @@
 .hideScroll::-webkit-scrollbar {
     display: none;
 }
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+}

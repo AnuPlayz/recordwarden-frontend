@@ -1,9 +1,14 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import Link from "next/link"
 
 export default function RecentCases() {
     const [isOpen, setIsOpen] = useState(false)
     const [sortBy, setSortBy] = useState("30d")
+
+    useEffect(() => {
+        setIsOpen(false)
+    }, [sortBy])
 
     return (<>
         <div className="text-3xl text-white text-center">Recent Cases</div>
@@ -93,7 +98,7 @@ export default function RecentCases() {
                                 {new Date(1279267555432).toLocaleString()}
                             </td>
                             <td className="px-6 py-4">
-                                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
+                                <Link href="/cases/001" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</Link>
                             </td>
                         </tr>
                         <tr className="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
@@ -110,11 +115,11 @@ export default function RecentCases() {
                                 {new Date(1279267555432).toLocaleString()}
                             </td>
                             <td className="px-6 py-4">
-                                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
+                                <Link href="/cases/001" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</Link>
                             </td>
                         </tr>
                         <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-lg">
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-lg">
                                 #0004
                             </th>
                             <td className="px-6 py-4">
@@ -127,7 +132,7 @@ export default function RecentCases() {
                                 {new Date(1279267555432).toLocaleString()}
                             </td>
                             <td className="px-6 py-4">
-                                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
+                                <Link href="/cases/001" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</Link>
                             </td>
                         </tr>
                     </tbody>

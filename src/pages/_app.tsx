@@ -10,7 +10,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     document.documentElement.classList.add('dark');
   }, [])
 
-  return (<>
+  return (<div className="hideScroll">
     <ThirdwebProvider
       activeChain="polygon"
       clientId="af574d551a74949aacbf76fbee4f40f4"
@@ -24,13 +24,13 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         phantomWallet(),
       ]}
     >
-      <div className="flex flex-col bg-gray-900 min-h-[100vh] h-auto w-full overflow-y-hidden overflow-x-hidden">
+      <div className="flex flex-col p-5 bg-gray-900 min-h-[100vh] h-auto w-full overflow-y-hidden overflow-x-hidden hideScroll">
         <Navbar />
-        <div className="mt-24"/>
+        <div className="mt-24" />
         <Component {...pageProps} />;
       </div>
     </ThirdwebProvider>
-  </>)
+  </div>)
 };
 
 export default MyApp;
