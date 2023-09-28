@@ -55,7 +55,7 @@ export default function Cases() {
                     <div className="mt-5 text-2xl text-white text-center mb-4">Upload a Document</div>
                     <div className="flex flex-row justify-between w-full px-5">
                         <FileInput/>
-                        <div className="bg-orange-500 rounded-lg cursor-pointer text-gray-200 h-full px-5 py-1 text-lg">Upload</div>
+                        <div className="bg-orange-500 hover:bg-orange-700 rounded-lg cursor-pointer text-gray-200 h-full px-5 py-1 text-lg">Upload</div>
                     </div>
                 </div>
                 <div className="items-center justify-center flex flex-col w-2/3">
