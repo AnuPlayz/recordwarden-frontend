@@ -22,17 +22,22 @@ export default function Cases() {
                 <div className="items-center flex flex-col w-1/3">
                     <div className="mt-5 text-2xl text-white text-center">Case Information</div>
                     <div className="flex flex-col w-full p-5">
-                        <div className="flex flex-row items-center text-gray-300 text-xl">
+                        <div className="flex flex-row items-center text-gray-300 text-xl w-full justify-between mb-5">
+                            Next Hearing Date: <span className="text-orange-400">6/9/2023</span>
+                        </div>
+                        <div className="flex flex-row items-center text-gray-300 text-xl justify-between">
                             Lawyers:
-                            <Tooltip content="Nahida">
-                                <Avatar status="online" className="ml-3 hover:scale-125" img="https://cdn.discordapp.com/attachments/1106611314891161663/1156610031836483674/nahida.jpg" />
-                            </Tooltip>
-                            <Tooltip content="Lyney">
-                                <Avatar status="away" className="ml-3 hover:scale-125" img="https://media.discordapp.net/attachments/1106611314891161663/1156610032440455259/1a167df43f24af3c.jpg" />
-                            </Tooltip>
-                            <Tooltip content="Xiao">
-                                <Avatar status="busy" className="ml-3 hover:scale-125" img="https://media.discordapp.net/attachments/1106611314891161663/1156610140959670282/1.jpg" />
-                            </Tooltip>
+                            <div className="flex flex-row">
+                                <Tooltip content="Nahida">
+                                    <Avatar status="online" className="ml-3 hover:scale-125" img="https://cdn.discordapp.com/attachments/1106611314891161663/1156610031836483674/nahida.jpg" />
+                                </Tooltip>
+                                <Tooltip content="Lyney">
+                                    <Avatar status="away" className="ml-3 hover:scale-125" img="https://media.discordapp.net/attachments/1106611314891161663/1156610032440455259/1a167df43f24af3c.jpg" />
+                                </Tooltip>
+                                <Tooltip content="Xiao">
+                                    <Avatar status="busy" className="ml-3 hover:scale-125" img="https://media.discordapp.net/attachments/1106611314891161663/1156610140959670282/1.jpg" />
+                                </Tooltip>
+                            </div>
                         </div>
                     </div>
 
@@ -54,7 +59,7 @@ export default function Cases() {
 
                     <div className="mt-5 text-2xl text-white text-center mb-4">Upload a Document</div>
                     <div className="flex flex-row justify-between w-full px-5">
-                        <FileInput/>
+                        <FileInput />
                         <div className="bg-orange-500 hover:bg-orange-700 rounded-lg cursor-pointer text-gray-200 h-full px-5 py-1 text-lg">Upload</div>
                     </div>
                 </div>
