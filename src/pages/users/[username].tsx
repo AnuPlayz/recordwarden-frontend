@@ -1,4 +1,4 @@
-import { Avatar, Button, Select, TextInput } from "flowbite-react";
+import { Avatar } from "flowbite-react";
 import Head from "next/head";
 import Link from "next/link";
 

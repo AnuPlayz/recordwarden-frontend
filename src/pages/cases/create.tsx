@@ -1,4 +1,4 @@
-import { Avatar, Button, FileInput, Tooltip } from "flowbite-react";
+import { Button } from "flowbite-react";
 import Head from "next/head";
 
 export default function Cases() {
