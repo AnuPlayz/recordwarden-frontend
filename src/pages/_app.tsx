@@ -4,6 +4,7 @@ import { ThirdwebProvider, coinbaseWallet, metamaskWallet, phantomWallet, rainbo
 import "~/styles/globals.css";
 import Navbar from "~/components/Navbar";
 import { useEffect } from "react";
+import { RecordWardenProvider } from "~/context/RecordWarden";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -24,14 +25,15 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         phantomWallet(),
       ]}
     >
-      <div className="flex flex-col p-5 bg-gray-900 min-h-[100vh] h-auto w-full overflow-y-hidden overflow-x-hidden hideScroll">
-        <Navbar />
-        <div className="mt-24" />
-        <Component {...pageProps} />;
-      </div>
+      <RecordWardenProvider>
+        <div className="flex flex-col p-5 bg-gray-900 min-h-[100vh] h-auto w-full overflow-y-hidden overflow-x-hidden hideScroll">
+          <Navbar />
+          <div className="mt-24" />
+          <Component {...pageProps} />;
+        </div>
+      </RecordWardenProvider>
     </ThirdwebProvider>
   </div>)
 };
 
 export default MyApp;
-//format
