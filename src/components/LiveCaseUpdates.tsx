@@ -78,12 +78,9 @@ export default function LiveCaseUpdates() {
                                                 : event.eventName === "CaseClosed" ?
                                                     "Case Closed"
                                                     : event.eventName === "CaseUpdated" ?
-                                                        "Case Updated"
+                                                        "Case Updated ("+field+")"
                                                         : "Unknown Event"
                                         }
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        {field}
                                     </td>
                                     <td className="px-6 py-4">
                                         {oldVal}
@@ -95,7 +92,7 @@ export default function LiveCaseUpdates() {
                                         {c.updatedBy}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {new Date(Number(c.createdAt._hex)).toLocaleString()}
+                                        {new Date(Number(c.createdAt._hex)*1000).toLocaleString()}
                                     </td>
                                     <td className="px-6 py-4">
                                         <a href={"/cases/" + Number(c.id._hex)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
@@ -129,15 +126,15 @@ export default function LiveCaseUpdates() {
                                     <td className="px-6 py-4">
                                         {
                                             event.eventName === "CaseClosed" ?
-                                                `Case Closed at ${new Date(Number(c.closedAt._hex)).toLocaleString()} by ${c.closedBy}` :
-                                                `Case Created at ${new Date(Number(c.createdAt._hex)).toLocaleString()} by ${c.createdBy}`
+                                                `Case Closed at ${new Date(Number(c.closedAt._hex)*1000).toLocaleString()} by ${c.closedBy}` :
+                                                `Case Created at ${new Date(Number(c.createdAt._hex)*1000).toLocaleString()} by ${c.createdBy}`
                                         }
                                     </td>
                                     <td className="px-6 py-4">
                                         {c.updatedBy}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {new Date(Number(c.createdAt._hex)).toLocaleString()}
+                                        {new Date(Number(c.createdAt._hex)*1000).toLocaleString()}
                                     </td>
                                     <td className="px-6 py-4">
                                         <a href={"/cases/" + Number(c.id._hex)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
