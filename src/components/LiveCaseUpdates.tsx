@@ -34,17 +34,19 @@ export default function LiveCaseUpdates() {
                     </thead>
                     <tbody>
                         {recentEvents.map((event, index) => {
+                            console.log("Recent Events", recentEvents)
                             if (![
                                 "CaseCreated",
                                 "CaseClosed",
                                 "CaseUpdated"
                             ].includes(event.eventName)) return;
+                            console.log("Event Exists", event, index)
                             if (!recentEvents[index + 1]) return;
 
                             const c = event.data.c;
                             const nc = recentEvents[index + 1]!.data.c;
 
-                            console.log(c, nc)
+                            console.log("Case: ", c, "Next Case:", nc)
 
                             // Find what value is changed
                             let oldVal: any = null;
