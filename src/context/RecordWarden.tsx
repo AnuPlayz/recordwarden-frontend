@@ -1,5 +1,5 @@
 'use client'
-import { useContract, useSigner } from "@thirdweb-dev/react";
+import { useContract, useContractWrite, useSigner } from "@thirdweb-dev/react";
 import { createContext, useEffect } from "react";
 import { CONTRACT_ADDRESS } from "~/config";
 import Data from "~/RecordWarden.json"
