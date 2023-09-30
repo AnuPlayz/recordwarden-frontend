@@ -24,6 +24,11 @@ export interface Case {
         _isBigNumber: boolean;
     };
     lawyers?: []
+
+    /**
+     * Index signature for unknown keys.
+     */
+    [key: string]: any;
 }
 
 const RecentCasesToShow = 5;

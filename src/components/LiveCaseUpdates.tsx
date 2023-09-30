@@ -38,17 +38,17 @@ export default function LiveCaseUpdates() {
                             "CaseClosed",
                             "CaseUpdated"
                         ].includes(event.eventName)).map((event, index) => {
-                            console.log(recentEvents.filter(event => [
+                            let ev = recentEvents.filter(event => [
                                 "CaseCreated",
                                 "CaseClosed",
                                 "CaseUpdated"
-                            ].includes(event.eventName)))
+                            ].includes(event.eventName))
                             console.log("Event Exists", event, index)
-                            console.log(recentEvents[index], recentEvents[index + 1])
-                            if (!recentEvents[index + 1]) return;
+                            console.log(ev[index], ev[index + 1])
+                            if (!ev[index + 1]) return;
 
                             const c = event.data.c;
-                            const nc = recentEvents[index + 1]!.data.c;
+                            const nc = ev[index + 1]!.data.c;
 
                             console.log("Case: ", c, "Next Case:", nc)
 
@@ -57,11 +57,8 @@ export default function LiveCaseUpdates() {
                             let newVal: any = null;
 
                             Object.keys(c).forEach((key) => {
-                                //@ts-ignore
                                 if (c[key] !== nc[key]) {
-                                    //@ts-ignore
                                     oldVal = c[key];
-                                    //@ts-ignore
                                     newVal = nc[key];
                                 }
                             });
