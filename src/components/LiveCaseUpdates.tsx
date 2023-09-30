@@ -16,6 +16,9 @@ export default function LiveCaseUpdates() {
                                 Case ID
                             </th>
                             <th scope="col" className="px-6 py-3">
+                                Field
+                            </th>
+                            <th scope="col" className="px-6 py-3">
                                 Old Value
                             </th>
                             <th scope="col" className="px-6 py-3">
@@ -34,8 +37,6 @@ export default function LiveCaseUpdates() {
                     </thead>
                     <tbody>
                         {recentEvents.filter(event => [
-                            "CaseCreated",
-                            "CaseClosed",
                             "CaseUpdated"
                         ].includes(event.eventName)).map((event, index) => {
                             let ev = recentEvents.filter(event => [
@@ -43,8 +44,6 @@ export default function LiveCaseUpdates() {
                                 "CaseClosed",
                                 "CaseUpdated"
                             ].includes(event.eventName))
-                            console.log("Event Exists", event, index)
-                            console.log(ev[index], ev[index + 1])
                             if (!ev[index + 1]) return;
 
                             const c = event.data.c;
@@ -64,7 +63,7 @@ export default function LiveCaseUpdates() {
                                     field = key;
                                 }
                             });
-                            
+
                             console.log("Field: ", field, "Old Value: ", oldVal, "New Value: ", newVal)
 
                             return (
@@ -84,16 +83,64 @@ export default function LiveCaseUpdates() {
                                         }
                                     </td>
                                     <td className="px-6 py-4">
-                                        Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>, Sudhan&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
+                                        {field}
                                     </td>
                                     <td className="px-6 py-4">
-                                        Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
+                                        {oldVal}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {new Date(1279267555432).toLocaleString()}
+                                        {newVal}
                                     </td>
                                     <td className="px-6 py-4">
-                                        <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
+                                        {c.updatedBy}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {new Date(Number(c.createdAt._hex)).toLocaleString()}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <a href={"/cases/" + Number(c.id._hex)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
+                                    </td>
+                                </tr>)
+                        })}
+
+                        {recentEvents.filter(event => [
+                            "CaseCreated",
+                            "CaseClosed",
+                        ].includes(event.eventName)).map((event, index) => {
+                            let c = event.data.c;
+
+                            return (
+                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-gray-200">
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-lg">
+                                        #{Number(c.id._hex).toString().padStart(4, "0")}
+                                    </th>
+                                    <td className="px-6 py-4">
+                                        {
+                                            event.eventName === "CaseCreated" ?
+                                                "New Case Created"
+                                                : event.eventName === "CaseClosed" ?
+                                                    "Case Closed"
+                                                    : "Unknown Event (Probably error)"
+                                        }
+                                    </td>
+                                    <td className="px-6 py-4">
+
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {
+                                            event.eventName === "CaseClosed" ?
+                                                `Case Closed at ${new Date(Number(c.closedAt._hex)).toLocaleString()} by ${c.closedBy}` :
+                                                `Case Created at ${new Date(Number(c.createdAt._hex)).toLocaleString()} by ${c.createdBy}`
+                                        }
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {c.updatedBy}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {new Date(Number(c.createdAt._hex)).toLocaleString()}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <a href={"/cases/" + Number(c.id._hex)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
                                     </td>
                                 </tr>)
                         })}
@@ -103,3 +150,5 @@ export default function LiveCaseUpdates() {
         </div>
     </>)
 }
+
+// wut next i du?
