@@ -86,7 +86,7 @@ export default function LiveCaseUpdates() {
                                 {new Date(1279267555432).toLocaleString()}
                             </td>
                             <td className="px-6 py-4">
-                                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
+                                <a href="/cases/0" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
                             </td>
                         </tr>
                     </tbody>

@@ -22,6 +22,13 @@ export const RecordWardenProvider = (props: any) => {
     if (window) window.contract = contract
     //@ts-ignore
     if (window) window.signer = signer
+
+    //Get last 5 events that happened in the contract
+    if(contract){
+      contract.events.getAllEvents({fromBlock: 0, toBlock: 'latest'}).then((events: any) => {
+        console.log(events)
+      })
+    }
   }, [contract])
 
   return (
