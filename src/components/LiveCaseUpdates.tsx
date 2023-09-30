@@ -55,15 +55,17 @@ export default function LiveCaseUpdates() {
                             // Find what value is changed
                             let oldVal: any = null;
                             let newVal: any = null;
+                            let field: any = null
 
                             Object.keys(c).forEach((key) => {
                                 if (c[key] !== nc[key]) {
                                     oldVal = c[key];
                                     newVal = nc[key];
+                                    field = key;
                                 }
                             });
-
-                            console.log(oldVal, newVal)
+                            
+                            console.log("Field: ", field, "Old Value: ", oldVal, "New Value: ", newVal)
 
                             return (
                                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-gray-200">
