@@ -8,7 +8,7 @@ const RecentCasesToShow = 5;
 export default function RecentCases() {
     const [isOpen, setIsOpen] = useState(false)
     const [sortBy, setSortBy] = useState("30d")
-    const [cases, setCases] = useState([])
+    const [, setCases] = useState([])
     const { contract, signer } = useContext(RecordWardenContext)
 
     useEffect(() => {
@@ -21,6 +21,7 @@ export default function RecentCases() {
                     cases.push(caseDetails)
                 }
                 console.log(cases)
+                setCases(cases as any)
             })
         }
     }, [contract, signer])

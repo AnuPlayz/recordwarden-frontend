@@ -1,5 +1,5 @@
 'use client'
-import { SmartContract, useContract, useContractWrite, useSigner } from "@thirdweb-dev/react";
+import { SmartContract, useContract, useSigner } from "@thirdweb-dev/react";
 import { BaseContract, Signer } from "ethers";
 import { createContext, useEffect } from "react";
 import { CONTRACT_ADDRESS } from "~/config";
