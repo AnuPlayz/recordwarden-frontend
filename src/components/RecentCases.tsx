@@ -23,6 +23,7 @@ export interface Case {
         _hex: string;
         _isBigNumber: boolean;
     };
+    lawyers?: []
 }
 
 const RecentCasesToShow = 5;
@@ -139,10 +140,10 @@ export default function RecentCases() {
                                     {c.description}
                                 </td>
                                 <td className="px-6 py-4">
-                                    {c.client}
+                                    {c.lawyers?? "None"}
                                 </td>
                                 <td className="px-6 py-4">
-                                    {new Date(Number(c.createdAt._hex)).toLocaleString()}
+                                    {new Date(Number(c.createdAt._hex)*1000).toLocaleString()}
                                 </td>
                                 <td className="px-6 py-4">
                                     <Link href={"/cases/" + Number(c.id._hex)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</Link>
