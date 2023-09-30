@@ -38,7 +38,13 @@ export default function LiveCaseUpdates() {
                             "CaseClosed",
                             "CaseUpdated"
                         ].includes(event.eventName)).map((event, index) => {
+                            console.log(recentEvents.filter(event => [
+                                "CaseCreated",
+                                "CaseClosed",
+                                "CaseUpdated"
+                            ]))
                             console.log("Event Exists", event, index)
+                            console.log(recentEvents[index], recentEvents[index + 1])
                             if (!recentEvents[index + 1]) return;
 
                             const c = event.data.c;
