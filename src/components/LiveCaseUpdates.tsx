@@ -33,13 +33,11 @@ export default function LiveCaseUpdates() {
                         </tr>
                     </thead>
                     <tbody>
-                        {recentEvents.map((event, index) => {
-                            console.log("Recent Events", recentEvents)
-                            if (![
-                                "CaseCreated",
-                                "CaseClosed",
-                                "CaseUpdated"
-                            ].includes(event.eventName)) return;
+                        {recentEvents.filter(event => [
+                            "CaseCreated",
+                            "CaseClosed",
+                            "CaseUpdated"
+                        ].includes(event.eventName)).map((event, index) => {
                             console.log("Event Exists", event, index)
                             if (!recentEvents[index + 1]) return;
 
