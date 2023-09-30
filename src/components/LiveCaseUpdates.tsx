@@ -42,7 +42,7 @@ export default function LiveCaseUpdates() {
                                 "CaseCreated",
                                 "CaseClosed",
                                 "CaseUpdated"
-                            ]))
+                            ].includes(event.eventName)))
                             console.log("Event Exists", event, index)
                             console.log(recentEvents[index], recentEvents[index + 1])
                             if (!recentEvents[index + 1]) return;
