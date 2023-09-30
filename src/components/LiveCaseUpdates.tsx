@@ -42,7 +42,9 @@ export default function LiveCaseUpdates() {
                             if (!recentEvents[index + 1]) return;
 
                             const c = event.data.c;
-                            const nc = Object(recentEvents[index + 1]!.data.c);
+                            const nc = recentEvents[index + 1]!.data.c;
+
+                            console.log(c, nc)
 
                             // Find what value is changed
                             let oldVal: any = null;
@@ -53,6 +55,7 @@ export default function LiveCaseUpdates() {
                                 if (c[key] !== nc[key]) {
                                     //@ts-ignore
                                     oldVal = c[key];
+                                    //@ts-ignore
                                     newVal = nc[key];
                                 }
                             });
