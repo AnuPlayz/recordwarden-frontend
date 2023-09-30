@@ -30,18 +30,15 @@ const RecentCasesToShow = 5;
 export default function RecentCases() {
     const [isOpen, setIsOpen] = useState(false)
     const [sortBy, setSortBy] = useState("30d")
-    const [, setCases] = useState<Case[]>([])
+    const [cases, setCases] = useState<Case[]>([])
     const { contract, signer } = useContext(RecordWardenContext)
 
     useEffect(() => {
         if (signer && contract) {
-            console.log("Getting cases")
             contract.call("caseCount").then(async count => {
                 let c: number = await count;
-                console.log(`Total cases: ${c}`)
                 let cases = []
                 for (let i = c; i > c - RecentCasesToShow; i--) {
-                    console.log(`Getting case ${i}`)
                     try {
                         let caseDetails = await contract.call("cases", [i])
                         if (Number(caseDetails.createdAt) === 0) continue;
@@ -50,7 +47,6 @@ export default function RecentCases() {
                         console.log(`Error getting case ${i}`)
                     }
                 }
-                console.log(cases)
                 setCases(cases as any)
             })
         }
@@ -134,57 +130,25 @@ export default function RecentCases() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-gray-200">
-                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-lg">
-                                #0001
-                            </th>
-                            <td className="px-6 py-4">
-                                Robbery
-                            </td>
-                            <td className="px-6 py-4">
-                                Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>, Sudhan&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
-                            </td>
-                            <td className="px-6 py-4">
-                                {new Date(1279267555432).toLocaleString()}
-                            </td>
-                            <td className="px-6 py-4">
-                                <Link href="/cases/001" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</Link>
-                            </td>
-                        </tr>
-                        <tr className="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700 text-gray-200">
-                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-lg">
-                                #0002
-                            </th>
-                            <td className="px-6 py-4">
-                                Robbery
-                            </td>
-                            <td className="px-6 py-4">
-                                Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>, Sudhan&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
-                            </td>
-                            <td className="px-6 py-4">
-                                {new Date(1279267555432).toLocaleString()}
-                            </td>
-                            <td className="px-6 py-4">
-                                <Link href="/cases/001" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</Link>
-                            </td>
-                        </tr>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-gray-200">
-                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-lg">
-                                #0004
-                            </th>
-                            <td className="px-6 py-4">
-                                Robbery
-                            </td>
-                            <td className="px-6 py-4">
-                                Ani&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>, Sudhan&nbsp;<span className="text-gray-400">{"("}0x847328472343{")"}</span>
-                            </td>
-                            <td className="px-6 py-4">
-                                {new Date(1279267555432).toLocaleString()}
-                            </td>
-                            <td className="px-6 py-4">
-                                <Link href="/cases/001" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</Link>
-                            </td>
-                        </tr>
+                        {cases.map(c => {
+                            return (<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-gray-200">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-lg">
+                                    #{Number(c.id._hex).toString().padStart(4, "0")}
+                                </th>
+                                <td className="px-6 py-4 line-clamp-1">
+                                    {c.description}
+                                </td>
+                                <td className="px-6 py-4">
+                                    {c.client}
+                                </td>
+                                <td className="px-6 py-4">
+                                    {new Date(Number(c.createdAt._hex)).toLocaleString()}
+                                </td>
+                                <td className="px-6 py-4">
+                                    <Link href={"/cases/" + Number(c.id._hex)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</Link>
+                                </td>
+                            </tr>)
+                        })}
                     </tbody>
                 </table>
             </div>
