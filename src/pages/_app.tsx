@@ -5,6 +5,7 @@ import "~/styles/globals.css";
 import Navbar from "~/components/Navbar";
 import { useEffect } from "react";
 import { RecordWardenProvider } from "~/context/RecordWarden";
+import { THIRD_SECRET } from "~/config";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -13,7 +14,17 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
   return (<div className="hideScroll">
     <ThirdwebProvider
-      activeChain="polygon"
+      activeChain="mumbai"
+      autoSwitch
+      autoConnect
+      secretKey={THIRD_SECRET}
+      theme="dark"
+      dAppMeta={{
+        name: "Record Warden",
+        url: "/",
+        isDarkMode: true,
+        description: "Meow..?"
+      }}
       clientId="af574d551a74949aacbf76fbee4f40f4"
       supportedWallets={[
         metamaskWallet(),
