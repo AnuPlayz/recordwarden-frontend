@@ -13,12 +13,20 @@ export default function RecentCases() {
 
     useEffect(() => {
         if (signer && contract) {
+            console.log("Getting cases")
             contract.call("caseCount").then(async count => {
                 let c: number = await count;
+                console.log(`Total cases: ${c}`)
                 let cases = []
                 for (let i = c; i > c - RecentCasesToShow; i--) {
-                    let caseDetails = await contract.call("cases", [i])
-                    cases.push(caseDetails)
+                    console.log(`Getting case ${i}`)
+                    try {
+                        let caseDetails = await contract.call("cases", [i])
+                        cases.push(caseDetails)
+                        console.log(`Got case ${i}`)
+                    } catch (e) {
+                        console.log(`Error getting case ${i}`)
+                    }
                 }
                 console.log(cases)
                 setCases(cases as any)
