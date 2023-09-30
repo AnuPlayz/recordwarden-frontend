@@ -1,10 +1,29 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Link from "next/link"
+import { RecordWardenContext } from "~/context/RecordWarden";
+
+const RecentCasesToShow = 5;
 
 export default function RecentCases() {
     const [isOpen, setIsOpen] = useState(false)
     const [sortBy, setSortBy] = useState("30d")
+    const [cases, setCases] = useState([])
+    const { contract, signer } = useContext(RecordWardenContext)
+
+    useEffect(() => {
+        if (signer && contract) {
+            contract.call("caseCount").then(async count => {
+                let c: number = await count;
+                let cases = []
+                for (let i = c; i > c - RecentCasesToShow; i--) {
+                    let caseDetails = await contract.call("cases", [i])
+                    cases.push(caseDetails)
+                }
+                console.log(cases)
+            })
+        }
+    }, [contract, signer])
 
     useEffect(() => {
         setIsOpen(false)

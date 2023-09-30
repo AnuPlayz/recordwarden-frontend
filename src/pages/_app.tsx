@@ -6,6 +6,7 @@ import Navbar from "~/components/Navbar";
 import { useEffect } from "react";
 import { RecordWardenProvider } from "~/context/RecordWarden";
 import { THIRD_SECRET } from "~/config";
+import { Toaster } from "react-hot-toast";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -37,6 +38,10 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       ]}
     >
       <RecordWardenProvider>
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+        />
         <div className="flex flex-col p-5 bg-gray-900 min-h-[100vh] h-auto w-full overflow-y-hidden overflow-x-hidden hideScroll">
           <Navbar />
           <div className="mt-24" />
