@@ -34,7 +34,7 @@ export default function LiveCaseUpdates() {
                     </thead>
                     <tbody>
                         {recentEvents.map((event, index) => {
-                            if ([
+                            if (![
                                 "CaseCreated",
                                 "CaseClosed",
                                 "CaseUpdated"
