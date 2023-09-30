@@ -3,12 +3,34 @@ import { useContext, useEffect, useState } from "react"
 import Link from "next/link"
 import { RecordWardenContext } from "~/context/RecordWarden";
 
+export interface Case {
+    client: string;
+    closedAt: {
+        _hex: string;
+        _isBigNumber: boolean;
+    };
+    createdAt: {
+        _hex: string;
+        _isBigNumber: boolean;
+    };
+    description: string;
+    id: {
+        _hex: string;
+        _isBigNumber: boolean;
+    };
+    status: number;
+    updatedAt: {
+        _hex: string;
+        _isBigNumber: boolean;
+    };
+}
+
 const RecentCasesToShow = 5;
 
 export default function RecentCases() {
     const [isOpen, setIsOpen] = useState(false)
     const [sortBy, setSortBy] = useState("30d")
-    const [, setCases] = useState([])
+    const [, setCases] = useState<Case[]>([])
     const { contract, signer } = useContext(RecordWardenContext)
 
     useEffect(() => {
@@ -22,8 +44,8 @@ export default function RecentCases() {
                     console.log(`Getting case ${i}`)
                     try {
                         let caseDetails = await contract.call("cases", [i])
+                        if (Number(caseDetails.createdAt) === 0) continue;
                         cases.push(caseDetails)
-                        console.log(`Got case ${i}`)
                     } catch (e) {
                         console.log(`Error getting case ${i}`)
                     }
