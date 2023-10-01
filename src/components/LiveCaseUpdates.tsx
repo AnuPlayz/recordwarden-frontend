@@ -62,7 +62,7 @@ export default function LiveCaseUpdates() {
                                 ) {
                                     if (key === "updatedAt") return;
 
-                                    field = key;//i psuhed this code ;
+                                    field = key;
                                     newVal = c[key];
                                     oldVal = nc[key];
 

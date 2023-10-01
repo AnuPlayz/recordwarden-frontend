@@ -1,8 +1,28 @@
 import { Avatar, FileInput, Tooltip } from "flowbite-react";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useContext, useEffect, useState } from "react";
+import { Case } from "~/components/RecentCases";
+import { RecordWardenContext } from "~/context/RecordWarden";
 
 export default function Cases() {
+    const [c, setC] = useState<Case | null>(null)
+    const router = useRouter()
+    const { contract } = useContext(RecordWardenContext)
+
+    useEffect(() => {
+        if (contract) {
+            const id = Number(router.query.id)
+            if (!Number.isInteger(id)) router.replace("/")
+            
+            contract.call("cases", [id]).then(async (_data) => {
+                const data = await _data
+                console.log(data)
+            })//my god nice
+        }
+    }, [contract])
+
     return (
         <>
             <Head>
