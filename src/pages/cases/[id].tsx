@@ -25,9 +25,11 @@ export default function Cases() {
                 const data = await _data
                 setC(data)
 
+                console.log(data)
+
                 let _laywers = []
                 for(let l in data.lawyers){
-                    console.log(l)
+                    console.log(l)//wait dont do anythin
                 }
             })
         }
@@ -100,7 +102,7 @@ export default function Cases() {
                             <ol className="m-5 p-5 relative border-l border-gray-200 dark:border-gray-700">
                                 <li className="mb-10 ml-6">
                                     <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                                        <Image alt="Image" className="rounded-full shadow-lg" src="https://media.discordapp.net/attachments/1106611314891161663/1156604265540882492/3.jpg?ex=65159329&is=651441a9&hm=49ae12bed4e03a007c644ac96672e6c18b8930b47f5945db5e37f619fcc8cf11&=" />
+                                        <Image alt="Image" className="rounded-full shadow-lg" src="https://cdn.discordapp.com/attachments/1106611314891161663/1156610031836483674/nahida.jpg" />
                                     </span>
                                     <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:bg-gray-700 dark:border-gray-600">
                                         <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">just now</time>
@@ -109,7 +111,7 @@ export default function Cases() {
                                 </li>
                                 <li className="mb-10 ml-6">
                                     <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                                        <Image alt="Image" className="rounded-full shadow-lg" src="https://media.discordapp.net/attachments/1106611314891161663/1156604265540882492/3.jpg?ex=65159329&is=651441a9&hm=49ae12bed4e03a007c644ac96672e6c18b8930b47f5945db5e37f619fcc8cf11&=" />
+                                        <Image alt="Image" className="rounded-full shadow-lg" src="https://cdn.discordapp.com/attachments/1106611314891161663/1156610031836483674/nahida.jpg" />
                                     </span>
                                     <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:bg-gray-700 dark:border-gray-600">
                                         <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">2 hours ago</time>
@@ -118,7 +120,7 @@ export default function Cases() {
                                 </li>
                                 <li className="mb-10 ml-6">
                                     <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                                        <Image alt="image" className="rounded-full shadow-lg" src="https://media.discordapp.net/attachments/1106611314891161663/1156604265540882492/3.jpg?ex=65159329&is=651441a9&hm=49ae12bed4e03a007c644ac96672e6c18b8930b47f5945db5e37f619fcc8cf11&=" />
+                                        <Image alt="image" className="rounded-full shadow-lg" src="https://cdn.discordapp.com/attachments/1106611314891161663/1156610031836483674/nahida.jpg" />
                                     </span>
                                     <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:bg-gray-700 dark:border-gray-600">
                                         <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">2 hours ago</time>
@@ -127,7 +129,7 @@ export default function Cases() {
                                 </li>
                                 <li className="mb-10 ml-6">
                                     <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                                        <Image alt="image" className="rounded-full shadow-lg" src="https://media.discordapp.net/attachments/1106611314891161663/1156604265540882492/3.jpg?ex=65159329&is=651441a9&hm=49ae12bed4e03a007c644ac96672e6c18b8930b47f5945db5e37f619fcc8cf11&=" />
+                                        <Image alt="image" className="rounded-full shadow-lg" src="https://cdn.discordapp.com/attachments/1106611314891161663/1156610031836483674/nahida.jpg" />
                                     </span>
                                     <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:bg-gray-700 dark:border-gray-600">
                                         <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">2 hours ago</time>
@@ -136,7 +138,7 @@ export default function Cases() {
                                 </li>
                                 <li className="ml-6">
                                     <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                                        <Image alt="image" className="rounded-full shadow-lg" src="https://media.discordapp.net/attachments/1106611314891161663/1156604265540882492/3.jpg?ex=65159329&is=651441a9&hm=49ae12bed4e03a007c644ac96672e6c18b8930b47f5945db5e37f619fcc8cf11&=" />
+                                        <Image alt="image" className="rounded-full shadow-lg" src="https://cdn.discordapp.com/attachments/1106611314891161663/1156610031836483674/nahida.jpg" />
                                     </span>
                                     <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:bg-gray-700 dark:border-gray-600">
                                         <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">1 day ago</time>
