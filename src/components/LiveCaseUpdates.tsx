@@ -90,16 +90,16 @@ export default function LiveCaseUpdates() {
                                                         : "Unknown Event"
                                         }
                                     </td>
-                                    <td className="px-6 py-4 line-clamp-1">
+                                    <td className="px-6 py-4">
                                         {!deezNuts ? oldVal.toString() : ""}
                                     </td>
-                                    <td className="px-6 py-4 line-clamp-1">
+                                    <td className="px-6 py-4">
                                         {deezNuts ? `New ${field} has been ${deezNuts}` : newVal.toString()}
                                     </td>
-                                    <td className="px-6 py-4 line-clamp-1">
+                                    <td className="px-6 py-4">
                                         {c.updatedBy}
                                     </td>
-                                    <td className="px-6 py-4 line-clamp-1">
+                                    <td className="px-6 py-4">
                                         {new Date(Number(c.createdAt._hex) * 1000).toLocaleString()}
                                     </td>
                                     <td className="px-6 py-4">
