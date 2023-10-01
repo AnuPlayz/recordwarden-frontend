@@ -55,8 +55,6 @@ export default function LiveCaseUpdates() {
                             let field: any = null;
                             let deezNuts = "";
 
-                            console.log(oldVal, newVal, field, deezNuts)
-
                             Object.keys(c).forEach((key) => {
                                 if (
                                     (Array.isArray(c[key]) && c[key].length !== nc[key].length) ||
@@ -70,6 +68,8 @@ export default function LiveCaseUpdates() {
                                     }
                                 }
                             });
+
+                            console.log(oldVal, newVal, field, deezNuts)
 
                             return (
                                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-gray-200">
@@ -88,10 +88,10 @@ export default function LiveCaseUpdates() {
                                         }
                                     </td>
                                     <td className="px-6 py-4">
-                                        {!deezNuts ? oldVal : ""}
+                                        {!deezNuts ? oldVal.toString() : ""}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {deezNuts ? `New ${field} has been ${deezNuts}` : newVal}
+                                        {deezNuts ? `New ${field} has been ${deezNuts}` : newVal.toString()}
                                     </td>
                                     <td className="px-6 py-4">
                                         {c.updatedBy}
