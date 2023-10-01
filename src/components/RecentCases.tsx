@@ -18,6 +18,10 @@ export interface Case {
         _hex: string;
         _isBigNumber: boolean;
     };
+    nextHearing: {
+        _hex: string;
+        _isBigNumber: boolean;
+    };
     status: number;
     updatedAt: {
         _hex: string;
