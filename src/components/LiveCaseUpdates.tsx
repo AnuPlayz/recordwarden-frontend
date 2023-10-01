@@ -49,8 +49,6 @@ export default function LiveCaseUpdates() {
                             const c = event.data.c;
                             const nc = ev[index + 1]!.data.c;
 
-                            console.log("Case: ", c, "Next Case:", nc)
-
                             // Find what value is changed
                             let oldVal: any = null;
                             let newVal: any = null;
@@ -62,16 +60,14 @@ export default function LiveCaseUpdates() {
                                     (Array.isArray(c[key]) && c[key].length !== nc[key].length) ||
                                     ((!Array.isArray(c[key]) && c[key] !== nc[key]))
                                 ) {
-                                    oldVal = c[key];
-                                    newVal = nc[key];
+                                    newVal = c[key];
+                                    oldVal = nc[key];
                                     field = key;
                                     if (Array.isArray(c[key])) {
                                         deezNuts = c[key].length > nc[key].length ? "added" : "removed"
                                     }
                                 }
                             });
-
-                            console.log("Field: ", field, "Old Value: ", oldVal, "New Value: ", newVal)
 
                             return (
                                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-gray-200">

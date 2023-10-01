@@ -54,7 +54,6 @@ export const RecordWardenProvider = (props: any) => {
 
     if(contract){
       contract.events.getAllEvents({fromBlock: 0, toBlock: 'latest'}).then((events: any) => {
-        console.log("Every Events", events)
         setRecentEvents(events.slice(-5).reverse())
       })
     }
