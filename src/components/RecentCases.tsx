@@ -43,11 +43,13 @@ export default function RecentCases() {
         if (signer && contract) {
             contract.call("caseCount").then(async count => {
                 let c: number = await count;
+                console.log("Total Cases:", c)
                 let cases = []
                 for (let i = c; i > c - RecentCasesToShow; i--) {
                     try {
                         let caseDetails = await contract.call("cases", [i])
                         if (Number(caseDetails.createdAt) === 0) continue;
+                        console.log(caseDetails)
                         cases.push(caseDetails)
                     } catch (e) {
                         console.log(`Error getting case ${i}`)
