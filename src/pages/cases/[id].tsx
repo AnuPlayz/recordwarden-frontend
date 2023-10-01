@@ -26,7 +26,9 @@ export default function Cases() {
                 setC(data)
 
                 let _laywers = []
-                for(l in data.lawyers)
+                for(let l in data.lawyers){
+                    console.log(l)
+                }
             })
         }
     }, [contract])
