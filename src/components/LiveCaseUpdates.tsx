@@ -57,7 +57,7 @@ export default function LiveCaseUpdates() {
                             let field: any = null
 
                             Object.keys(c).forEach((key) => {
-                                if (c[key] !== nc[key]) {
+                                if (c[key] !== nc[key] || (Array.isArray(c[key]) && c[key].length !== nc[key].length)) {
                                     oldVal = c[key];
                                     newVal = nc[key];
                                     field = key;
@@ -78,7 +78,7 @@ export default function LiveCaseUpdates() {
                                                 : event.eventName === "CaseClosed" ?
                                                     "Case Closed"
                                                     : event.eventName === "CaseUpdated" ?
-                                                        "Case Updated ("+field+")"
+                                                        "Case Updated (" + field + ")"
                                                         : "Unknown Event"
                                         }
                                     </td>
@@ -92,7 +92,7 @@ export default function LiveCaseUpdates() {
                                         {c.updatedBy}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {new Date(Number(c.createdAt._hex)*1000).toLocaleString()}
+                                        {new Date(Number(c.createdAt._hex) * 1000).toLocaleString()}
                                     </td>
                                     <td className="px-6 py-4">
                                         <a href={"/cases/" + Number(c.id._hex)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
@@ -126,15 +126,15 @@ export default function LiveCaseUpdates() {
                                     <td className="px-6 py-4">
                                         {
                                             event.eventName === "CaseClosed" ?
-                                                `Case Closed at ${new Date(Number(c.closedAt._hex)*1000).toLocaleString()}` :
-                                                `Case Created at ${new Date(Number(c.createdAt._hex)*1000).toLocaleString()}`
+                                                `Case Closed at ${new Date(Number(c.closedAt._hex) * 1000).toLocaleString()}` :
+                                                `Case Created at ${new Date(Number(c.createdAt._hex) * 1000).toLocaleString()}`
                                         }
                                     </td>
                                     <td className="px-6 py-4">
                                         {c.updatedBy}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {new Date(Number(c.createdAt._hex)*1000).toLocaleString()}
+                                        {new Date(Number(c.createdAt._hex) * 1000).toLocaleString()}
                                     </td>
                                     <td className="px-6 py-4">
                                         <a href={"/cases/" + Number(c.id._hex)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Full Details</a>
