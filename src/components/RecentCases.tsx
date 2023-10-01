@@ -49,10 +49,8 @@ export default function RecentCases() {
                     try {
                         let caseDetails = await contract.call("cases", [i])
                         if (Number(caseDetails.createdAt) === 0) continue;
-                        console.log(caseDetails)
                         cases.push(caseDetails)
                     } catch (e) {
-                        console.log(`Error getting case ${i}`)
                     }
                 }
                 setCases(cases as any)
