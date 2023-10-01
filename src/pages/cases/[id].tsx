@@ -56,7 +56,7 @@ export default function Cases() {
                         <div className="mt-5 text-2xl text-white text-center">Case Information</div>
                         <div className="flex flex-col w-full p-5">
                             <div className="flex flex-row items-center text-gray-300 text-xl w-full justify-between mb-5">
-                                Next Hearing Date: <span className="text-orange-400">{new Date(Number(c.nextHearing._hex)*1000).getDate().toString()}</span>
+                                Next Hearing Date: <span className="text-orange-400">{new Date(Number(c.nextHearing._hex)).getDate()}</span>
                             </div>
                             <div className="flex flex-row items-center text-gray-300 text-xl justify-between">
                                 Lawyers:
