@@ -126,8 +126,8 @@ export default function LiveCaseUpdates() {
                                     <td className="px-6 py-4">
                                         {
                                             event.eventName === "CaseClosed" ?
-                                                `Case Closed at ${new Date(Number(c.closedAt._hex)*1000).toLocaleString()} by ${c.closedBy}` :
-                                                `Case Created at ${new Date(Number(c.createdAt._hex)*1000).toLocaleString()} by ${c.createdBy}`
+                                                `Case Closed at ${new Date(Number(c.closedAt._hex)*1000).toLocaleString()}` :
+                                                `Case Created at ${new Date(Number(c.createdAt._hex)*1000).toLocaleString()}`
                                         }
                                     </td>
                                     <td className="px-6 py-4">
