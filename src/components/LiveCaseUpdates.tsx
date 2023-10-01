@@ -57,7 +57,10 @@ export default function LiveCaseUpdates() {
                             let field: any = null
 
                             Object.keys(c).forEach((key) => {
-                                if (c[key] !== nc[key] || (Array.isArray(c[key]) && c[key].length !== nc[key].length)) {
+                                if (
+                                    (Array.isArray(c[key]) && c[key].length !== nc[key].length) ||
+                                    ((!Array.isArray(c[key]) && c[key] !== nc[key]))
+                                ) {
                                     oldVal = c[key];
                                     newVal = nc[key];
                                     field = key;
