@@ -60,15 +60,15 @@ export default function LiveCaseUpdates() {
                                     (Array.isArray(c[key]) && c[key].length !== nc[key].length) ||
                                     ((!Array.isArray(c[key]) && c[key].toString() !== nc[key].toString()))
                                 ) {
-                                    field = key;
-                                    
-                                    if (field !== "updatedAt") {
-                                        newVal = c[key];
-                                        oldVal = nc[key];
+                                    if (key === "updatedAt") return;
 
-                                        if (Array.isArray(c[key])) {
-                                            deezNuts = c[key].length > nc[key].length ? "added" : "removed"
-                                        }
+                                    field = key;
+
+                                    newVal = c[key];
+                                    oldVal = nc[key];
+
+                                    if (Array.isArray(c[key])) {
+                                        deezNuts = c[key].length > nc[key].length ? "added" : "removed"
                                     }
                                 }
                             });
