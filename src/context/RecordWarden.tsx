@@ -56,6 +56,11 @@ export const RecordWardenProvider = (props: any) => {
       contract.events.getAllEvents({fromBlock: 0, toBlock: 'latest'}).then((events: any) => {
         setRecentEvents(events.slice(-5).reverse())
       })
+
+      contract.events.listenToAllEvents(event => {
+        let ev = [...recentEvents, event]
+        setRecentEvents(ev as CaseEvent[])
+      })
     }
   }, [contract])
 
