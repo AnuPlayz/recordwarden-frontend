@@ -91,10 +91,10 @@ export default function LiveCaseUpdates() {
                                         }
                                     </td>
                                     <td className="px-6 py-4">
-                                        {!deezNuts ? oldVal.toString() : ""}
+                                        {!deezNuts ? `${oldVal}` : ""}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {deezNuts ? `New ${field} has been ${deezNuts}` : newVal.toString()}
+                                        {deezNuts ? `New ${field} has been ${deezNuts}` :`${newVal}`}
                                     </td>
                                     <td className="px-6 py-4">
                                         {c.updatedBy}
