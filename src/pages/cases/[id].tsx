@@ -6,8 +6,13 @@ import { useContext, useEffect, useState } from "react";
 import { Case } from "~/components/RecentCases";
 import { RecordWardenContext } from "~/context/RecordWarden";
 
+export interface Lawyer{
+
+}
+
 export default function Cases() {
     const [c, setC] = useState<Case | null>(null)
+    const [lawyers, setLawyers] = useState<Lawyer[]>([])
     const router = useRouter()
     const { contract } = useContext(RecordWardenContext)
 
@@ -19,6 +24,9 @@ export default function Cases() {
             contract.call("cases", [id]).then(async (_data) => {
                 const data = await _data
                 setC(data)
+
+                let _laywers = []
+                for(l in data.lawyers)
             })
         }
     }, [contract])
@@ -44,7 +52,7 @@ export default function Cases() {
                         <div className="mt-5 text-2xl text-white text-center">Case Information</div>
                         <div className="flex flex-col w-full p-5">
                             <div className="flex flex-row items-center text-gray-300 text-xl w-full justify-between mb-5">
-                                Next Hearing Date: <span className="text-orange-400">{new Date(Number(c.nextHearing._hex)*1000).getDate()}</span>
+                                Next Hearing Date: <span className="text-orange-400">{new Date(Number(c.nextHearing._hex)*1000).getDate().toString()}</span>
                             </div>
                             <div className="flex flex-row items-center text-gray-300 text-xl justify-between">
                                 Lawyers:
