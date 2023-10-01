@@ -58,7 +58,7 @@ export default function LiveCaseUpdates() {
                             Object.keys(c).forEach((key) => {
                                 if (
                                     (Array.isArray(c[key]) && c[key].length !== nc[key].length) ||
-                                    ((!Array.isArray(c[key]) && c[key] !== nc[key]))
+                                    ((!Array.isArray(c[key]) && c[key].toString() !== nc[key].toString()))
                                 ) {
                                     newVal = c[key];
                                     oldVal = nc[key];
