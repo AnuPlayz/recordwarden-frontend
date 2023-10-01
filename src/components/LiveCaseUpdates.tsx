@@ -55,6 +55,8 @@ export default function LiveCaseUpdates() {
                             let field: any = null;
                             let deezNuts = "";
 
+                            console.log(oldVal, newVal, field, deezNuts)
+
                             Object.keys(c).forEach((key) => {
                                 if (
                                     (Array.isArray(c[key]) && c[key].length !== nc[key].length) ||
