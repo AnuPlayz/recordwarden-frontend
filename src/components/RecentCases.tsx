@@ -37,10 +37,10 @@ export default function RecentCases() {
     const [isOpen, setIsOpen] = useState(false)
     const [sortBy, setSortBy] = useState("30d")
     const [cases, setCases] = useState<Case[]>([])
-    const { contract, signer } = useContext(RecordWardenContext)
+    const { contract } = useContext(RecordWardenContext)
 
     useEffect(() => {
-        if (signer && contract) {
+        if (contract) {
             contract.call("caseCount").then(async count => {
                 let c: number = await count;
                 console.log("Total Cases:", c)
@@ -58,7 +58,7 @@ export default function RecentCases() {
                 setCases(cases as any)
             })
         }
-    }, [contract, signer])
+    }, [contract])
 
     useEffect(() => {
         setIsOpen(false)
