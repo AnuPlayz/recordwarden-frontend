@@ -62,8 +62,7 @@ export default function LiveCaseUpdates() {
                                 ) {
                                     if (key === "updatedAt") return;
 
-                                    field = key;
-
+                                    field = key;//i psuhed this code ;
                                     newVal = c[key];
                                     oldVal = nc[key];
 
@@ -91,16 +90,16 @@ export default function LiveCaseUpdates() {
                                                         : "Unknown Event"
                                         }
                                     </td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-4 line-clamp-1">
                                         {!deezNuts ? oldVal.toString() : ""}
                                     </td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-4 line-clamp-1">
                                         {deezNuts ? `New ${field} has been ${deezNuts}` : newVal.toString()}
                                     </td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-4 line-clamp-1">
                                         {c.updatedBy}
                                     </td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-6 py-4 line-clamp-1">
                                         {new Date(Number(c.createdAt._hex) * 1000).toLocaleString()}
                                     </td>
                                     <td className="px-6 py-4">
