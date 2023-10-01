@@ -54,7 +54,8 @@ export default function LiveCaseUpdates() {
                             // Find what value is changed
                             let oldVal: any = null;
                             let newVal: any = null;
-                            let field: any = null
+                            let field: any = null;
+                            let deezNuts = "";
 
                             Object.keys(c).forEach((key) => {
                                 if (
@@ -64,6 +65,9 @@ export default function LiveCaseUpdates() {
                                     oldVal = c[key];
                                     newVal = nc[key];
                                     field = key;
+                                    if (Array.isArray(c[key])) {
+                                        deezNuts = c[key].length > nc[key].length ? "added" : "removed"
+                                    }
                                 }
                             });
 
@@ -86,10 +90,10 @@ export default function LiveCaseUpdates() {
                                         }
                                     </td>
                                     <td className="px-6 py-4">
-                                        {oldVal}
+                                        {!deezNuts ? oldVal : ""}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {newVal}
+                                        {deezNuts ? `New ${field} has been ${deezNuts}` : newVal}
                                     </td>
                                     <td className="px-6 py-4">
                                         {c.updatedBy}
