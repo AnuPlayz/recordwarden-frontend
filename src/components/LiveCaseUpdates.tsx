@@ -147,5 +147,3 @@ export default function LiveCaseUpdates() {
         </div>
     </>)
 }
-
-// wut next i du?
